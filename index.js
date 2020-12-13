@@ -1,7 +1,19 @@
 // Add your functions here
-function transfToNegativ(sourceArray){
-  let array=[];
-  array.map(-1*sourceArray[i]);
-  
+function map(arr, func){
+    let newArr = []
+    arr.forEach(element => {
+        newArr.push(func(element))
+    });
+    return newArr
 }
-transfToNegativ([1,2,3,-9]);
+
+function reduce(arr, func, start){
+    let r = (!!start) ? start : arr[0]
+    let i = (!!start) ? 0 : 1
+  
+    for (; i < arr.length; i++) {
+      r = func(arr[i], r)
+    }
+  
+    return r;
+  }
